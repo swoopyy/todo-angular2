@@ -1,0 +1,10 @@
+<div>
+  <input type="checkbox" [(ngModel)]="checked">
+  <input type="text"
+         [readonly]="!isEditable"
+         [style.text-decoration]="checked ? 'line-through' : 'none'"
+         [(ngModel)]="content">
+  <i *ngIf="!isEditable" class="fa fa-edit" (click)="onEdit()"></i>
+  <i *ngIf="isEditable" class="fa fa-save" (click)="onEdit()"></i>
+  <i class="fa fa-trash-o" (click)="onDelete()"></i>
+</div>
